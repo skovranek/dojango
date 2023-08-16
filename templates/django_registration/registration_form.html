@@ -1,0 +1,22 @@
+<!-- registration form -->
+{% extends 'base.html' %}
+{% block title %}REGISTER{% endblock %}
+
+{% block content %}
+<div class="center">
+  <h1 class="underline">Account Registration</h1>
+</div>
+<form method="POST">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+<tr>
+  <td></td>
+  <td>
+    <button class="button" type="submit" aria-label="Submit">Submit</button>
+  </td>
+</tr>
+</table>
+</form>
+<p>Please note, this site does not require a functional email address to register, so use something like "fake-email@email.com".</p>
+{% endblock %}
