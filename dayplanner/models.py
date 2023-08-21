@@ -10,7 +10,6 @@ class Category(models.Model):
     """
     The category of task.
     """
-    id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     project = models.BooleanField(default=False)
@@ -26,7 +25,6 @@ class Task(models.Model):
     """
     Task to be completed.
     """
-    id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     start = models.DateTimeField()
@@ -70,7 +68,6 @@ class SubTask(models.Model):
     """
     Smaller tasks that are part of full tasks.
     """
-    id = models.AutoField(primary_key=True)
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     finished = models.BooleanField(default=False)
@@ -93,7 +90,6 @@ class Counter(models.Model):
     """
     attached object incrementing for tasks
     """
-    id = models.AutoField(primary_key=True)
     subtask = models.ForeignKey(SubTask, on_delete=models.CASCADE)
     count = models.PositiveSmallIntegerField(default=0)
 
@@ -110,7 +106,6 @@ class Counter(models.Model):
 
 
 class Question(models.Model):
-    id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.CharField(max_length=500)
     date = models.DateTimeField(auto_now_add=True)
@@ -129,7 +124,6 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    id = models.AutoField(primary_key=True)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer = models.CharField(max_length=500)
     date = models.DateTimeField(auto_now_add=True)
@@ -139,7 +133,6 @@ class Answer(models.Model):
 
 
 class Motto(models.Model):
-    id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     motto = models.CharField(max_length=500)
     date = models.DateTimeField(auto_now_add=True)

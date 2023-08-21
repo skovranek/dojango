@@ -156,3 +156,6 @@ SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
+
+# auto add primary keys for models
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
