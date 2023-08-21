@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'm&xdy0ni7g@llj1wd%e3wz3q&ulsry
 # dict value set as '' to evaluate as False by bool()
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['todo-today-list.herokuapp.com', "127.0.0.1"]
+ALLOWED_HOSTS = ['django-todos-7caa0bc186c8.herokuapp.com', 'todo-today-list.herokuapp.com', "127.0.0.1"]
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
