@@ -44,13 +44,14 @@ class HomeView(LoginRequiredMixin, generic.ListView):
         if Motto.objects.filter(user=self.request.user).exists():
             context['motto'] = Motto.objects.filter(user=self.request.user).latest()
         if self.request.user.is_authenticated:
+            # removed not
             if self.request.user.groups.filter(name='group').exists():
                 add_to_group(self.request.user)
         return context
 
 
 @login_required
-@permission_required('auth.view_user')
+#permission_required('auth.view_user')
 def user(request):
     return render(request, 'user.html')
 
