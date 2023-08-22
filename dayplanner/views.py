@@ -44,7 +44,7 @@ class HomeView(LoginRequiredMixin, generic.ListView):
         if Motto.objects.filter(user=self.request.user).exists():
             context['motto'] = Motto.objects.filter(user=self.request.user).latest()
         if self.request.user.is_authenticated:
-            if not self.request.user.groups.filter(name='group').exists():
+            if self.request.user.groups.filter(name='group').exists():
                 add_to_group(self.request.user)
         return context
 
