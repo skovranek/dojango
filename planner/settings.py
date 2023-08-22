@@ -73,7 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'planner.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -140,10 +139,11 @@ ACCOUNT_ACTIVATION_DAYS = 1
 # EMAIL_FILE_PATH = '/'
 ADMINS = []
 
+# comment out import db and such
 # Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+#import dj_database_url
+#db_from_env = dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(db_from_env)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
