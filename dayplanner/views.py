@@ -51,7 +51,7 @@ class HomeView(LoginRequiredMixin, generic.ListView):
 
 
 @login_required
-#permission_required('auth.view_user')
+@permission_required('auth.view_user')
 def user(request):
     return render(request, 'user.html')
 
