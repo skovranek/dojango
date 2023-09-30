@@ -80,23 +80,23 @@ class Migration(migrations.Migration):
                 ('finished', models.BooleanField(default=False)),
                 ('finished_when', models.DateTimeField(auto_now=True)),
                 ('priority', models.IntegerField(default=1)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dayplanner.Category')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='todo_app.Category')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.AddField(
             model_name='subtask',
             name='task',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dayplanner.Task'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='todo_app.Task'),
         ),
         migrations.AddField(
             model_name='counter',
             name='subtask',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dayplanner.SubTask'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='todo_app.SubTask'),
         ),
         migrations.AddField(
             model_name='answer',
             name='question',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dayplanner.Question'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='todo_app.Question'),
         ),
     ]

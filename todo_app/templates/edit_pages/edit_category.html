@@ -11,7 +11,7 @@
 <br>
 	<form method="POST">
 		{% csrf_token %}
-		<input type="hidden" name="user" value="{{ user.pk }}" aria-label="User">
+		<input type="hidden" name="user" value="{{ request.session.user_id }}" aria-label="User">
 		<table>
 		  <tr>
 		    <td class="form" colspan="2">

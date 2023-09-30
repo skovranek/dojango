@@ -9,12 +9,9 @@ class CategoryForm(forms.ModelForm):
 
 
 class TaskForm(forms.ModelForm):
-    # start = forms.DateTimeField(input_formats=['%Y-%m-%dT%H:%M'])
-    # due = forms.DateTimeField(input_formats=['%Y-%m-%dT%H:%M'])
-
     class Meta:
         model = Task
-        fields = ['user', 'category', 'start', 'due', 'name', 'priority']
+        fields = ['user', 'category', 'start', 'due', 'name', 'priority', 'finished']
     
     def clean(self):
         super().clean()
@@ -28,11 +25,10 @@ class TaskForm(forms.ModelForm):
             self.add_error('category', ' You may only add Tasks to your own Categories/Projects.')
 
 
-
 class SubTaskForm(forms.ModelForm):
     class Meta:
         model = SubTask
-        fields = ['task', 'name', 'priority']
+        fields = ['task', 'name', 'priority', 'finished']
 
 
 class QuestionForm(forms.ModelForm):

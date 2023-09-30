@@ -19,7 +19,5 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('dayplanner.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('django_registration.backends.one_step.urls')),
+    path('', include('todo_app.urls')),
 ]

@@ -19,13 +19,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+# fix this
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'm&xdy0ni7g@llj1wd%e3wz3q&ulsry5wk8&i+6*v77k@u*$y2+')
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'm&xdy0ni7g@llj1wd%e3wz3q&ulsry5wk8&i+6*v77k@u*$y2+')
+
+#remove from here to secret_key
+import environ
+
+environ.Env.read_env()
+env = environ.Env()
+SECRET_KEY = env("SECRET_KEY")
 
 # dict value set as '' to evaluate as False by bool()
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['django-todos-7caa0bc186c8.herokuapp.com', 'todo-today-list.herokuapp.com', "127.0.0.1"]
+# remove all but heroku
+ALLOWED_HOSTS = ['django-todos-7caa0bc186c8.herokuapp.com', 'todo-today-list.herokuapp.com', '127.0.0.1', 'localhost', '0.0.0.0']
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
@@ -38,8 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dayplanner.apps.DayplannerConfig',
-    'django_registration',
+    'todo_app.apps.TodoAppConfig',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'planner.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
@@ -67,19 +75,27 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-        },
+            },
     },
 ]
 
-WSGI_APPLICATION = 'planner.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(
-        conn_max_age=600,
-        conn_health_checks=True,
-    ),
+    #'prod': dj_database_url.config(
+    #    conn_max_age=600,
+    #    conn_health_checks=True,
+    #),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'PORT': env("DB_PORT"),
+    }
 }
 
 # Password validation
@@ -142,10 +158,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SECURE_HSTS_SECONDS = 3600
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False #set to true
+SESSION_COOKIE_SECURE = False #set to true
+CSRF_COOKIE_SECURE = False #set to true
 X_FRAME_OPTIONS = 'DENY'
+SECURE_PROXY_SSL_HEADER = None #remove
 
 # auto add primary keys for models
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

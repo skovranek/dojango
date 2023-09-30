@@ -8,7 +8,6 @@ from . import views
 urlpatterns = [
     # home and daily tasks
     path('', views.HomeView.as_view(), name='home'),
-    path('user', views.user, name='user'),
     path('introduction', views.introduction, name='introduction'),
     # archive
     path('archive', views.archive, name='archive'),

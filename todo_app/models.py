@@ -1,16 +1,17 @@
 import datetime
+import uuid
 
 from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
 
 class Category(models.Model):
     """
     The category of task.
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=36) 
     name = models.CharField(max_length=200)
     project = models.BooleanField(default=False)
 
@@ -25,7 +26,7 @@ class Task(models.Model):
     """
     Task to be completed.
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=36)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     start = models.DateTimeField()
     due = models.DateTimeField()
@@ -106,7 +107,7 @@ class Counter(models.Model):
 
 
 class Question(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=36)
     question = models.CharField(max_length=500)
     date = models.DateTimeField(auto_now_add=True)
     priority = models.IntegerField(default=1)
@@ -133,7 +134,7 @@ class Answer(models.Model):
 
 
 class Motto(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=36)
     motto = models.CharField(max_length=500)
     date = models.DateTimeField(auto_now_add=True)
 

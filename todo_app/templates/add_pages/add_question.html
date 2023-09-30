@@ -9,7 +9,7 @@
 <br>
 <form method="POST">
   {% csrf_token %}
-  <input type="hidden" name="user" value="{{ user.pk }}">
+  <input type="hidden" name="user" value="{{ request.session.user_id }}">
   <table >
     <tr>
 	  <td class="form">Question</td>
