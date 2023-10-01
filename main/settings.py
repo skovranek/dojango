@@ -19,6 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+# dict value set as '' to evaluate as False by bool()
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'm&xdy0ni7g@llj1wd%e3wz3q&ulsry5wk8&i+6*v77k@u*$y2+')
 
 # remove all but heroku
