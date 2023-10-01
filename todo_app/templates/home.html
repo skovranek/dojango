@@ -57,12 +57,13 @@
     </tr>
   {% for task in tasks %}
     <tr>
-      <td>{% if task.finished %}
+      <td>
+          {% if task.finished %}
               <input type="checkbox" checked disabled>
               <a href="{% url 'task_not_finished' task.id %}">
                 {% if task.priority > 0 %}{{ task.priority }}) {% endif %}{{ task }}
               </a>
-          {% elif not task.finished %}
+          {% elif task %}
               <input type="checkbox" disabled>     
               <a href="{% url 'task_finished' task.id %}">
                 {% if task.priority > 0 %}{{ task.priority }}) {% endif %}{{ task }}
