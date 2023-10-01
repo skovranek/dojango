@@ -12,8 +12,6 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.views.decorators.csrf import csrf_protect
 # login required superclass for class views
 from django.contrib import messages
-# group
-from django.contrib.auth.models import Group
 
 
 from todo_app.models import Category, Task, SubTask, Counter, Question, Answer, Motto
@@ -37,7 +35,7 @@ class HomeView(generic.ListView):
         if self.request.session.get('user_id') is not None:
             self.request.session.get('user_id', str(uuid.uuid4()))
             context = super().get_context_data()
-            context['questions'] = Question.objects.filter(date__date=timezone.localtime(timezone.now())).filter(user=self.request.session['user_id'])
+            context['questions'] = Question.objects.filter(date__date=timezone.localtime(timezone.now())).filter(user=self.request.session['user_id']).order_by('priority')
             if Motto.objects.filter(user=self.request.session['user_id']).exists():
                 context['motto'] = Motto.objects.filter(user=self.request.session['user_id']).latest()
             return context
