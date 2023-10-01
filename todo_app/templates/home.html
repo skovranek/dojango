@@ -12,18 +12,18 @@
 {% endif %}
 </p>
 <!-- question -->
-{% if questions.0 %}
-  <a href="{% url 'add_answer' questions.0.id %}">{{ questions.0 }} </a>
-  <a href="{% url 'edit_question' questions.0.id %}"> +</a>
+{% if question %}
+  <a href="{% url 'add_answer' question.id %}">{{ question }} </a>
+  <a href="{% url 'edit_question' question.id %}"> +</a>
   <form class="inline" method="POST" action="{% url 'delete' %}">
     {% csrf_token %}
-    <input type="hidden" name="id" value="{{ questions.0.id }}">
+    <input type="hidden" name="id" value="{{ question.id }}">
     <input type="hidden" name="object_type" value="question">
     <button class="delete" type="submit" aria-label="Submit">X</button>
   </form>
   <p></p>
-  {% if questions.0.answer_set.all %}
-    {% for answer in questions.0.answer_set.all %}
+  {% if question.answer_set.all %}
+    {% for answer in question.answer_set.all %}
       <p class='inline'>{{ answer }} </p>
       <a href="{% url 'edit_answer' answer.id %}"> +</a>
       <form class="inline" method="POST" action="{% url 'delete' %}">
