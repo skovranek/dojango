@@ -35,7 +35,7 @@ class HomeView(generic.ListView):
         if self.request.session.get('user_id') is not None:
             self.request.session.get('user_id', str(uuid.uuid4()))
             context = super().get_context_data()
-            questions = Question.objects.filter(date__date=timezone.localtime(timezone.now())).filter(user=self.request.session['user_id'])
+            questions = Question.objects.filter(date__date=timezone.localtime(timezone.now())).filter(user=self.request.session['user_id']).order_by('priority')
             context['question'] = questions[0]
             if Motto.objects.filter(user=self.request.session['user_id']).exists():
                 context['motto'] = Motto.objects.filter(user=self.request.session['user_id']).latest()
