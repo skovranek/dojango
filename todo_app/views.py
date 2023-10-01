@@ -367,7 +367,7 @@ def edit_category(request):
     categories = Category.objects.filter(user=request.session['user_id'])
     if request.method == 'POST':
         if request.session['user_id'] == request.POST['user']:
-            category = Category.objects.get(pk=request.POST['user'])
+            category = Category.objects.get(pk=request.POST['id'])
             form = CategoryForm(request.POST or None, instance=category)
             if form.is_valid():
                 form.save()
