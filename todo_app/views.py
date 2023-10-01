@@ -29,7 +29,7 @@ class HomeView(generic.ListView):
             return Task.objects.filter(start__date=today).filter(user=self.request.session['user_id']).order_by('priority', 'due')
         else:
             self.request.session['user_id'] = str(uuid.uuid4())
-            return redirect('intro')
+            return redirect('introduction')
 
     def get_context_data(self):
         if self.request.session.get('user_id') is not None:
