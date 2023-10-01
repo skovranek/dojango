@@ -62,7 +62,7 @@
               <a href="{% url 'task_not_finished' task.id %}">
                 {% if task.priority > 0 %}{{ task.priority }}) {% endif %}{{ task }}
               </a>
-          {% else %}
+          {% elif not task.finished %}
               <input type="checkbox" disabled>     
               <a href="{% url 'task_finished' task.id %}">
                 {% if task.priority > 0 %}{{ task.priority }}) {% endif %}{{ task }}
