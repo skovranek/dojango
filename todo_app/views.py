@@ -23,7 +23,7 @@ class HomeView(generic.ListView):
     template_name = 'home.html'
     context_object_name = 'tasks'
 
-    def get(self):
+    def get(self, *args, **kwargs):
         if self.request.session.get('user_id') is None:
             self.request.session['user_id'] = str(uuid.uuid4())
             return redirect('introduction')
