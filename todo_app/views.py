@@ -27,6 +27,8 @@ class HomeView(generic.ListView):
         if self.request.session.get('user_id') is None:
             self.request.session['user_id'] = str(uuid.uuid4())
             return redirect('introduction')
+        else:
+            return super(HomeView, self).get(*args, **kwargs)
 
     def get_queryset(self):
         if self.request.session.get('user_id') is not None:
