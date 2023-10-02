@@ -30,7 +30,7 @@ class HomeView(generic.ListView):
         else:
             self.request.session['user_id'] = str(uuid.uuid4())
             print("redirect to introduction")
-            return redirect('introduction')
+            return redirect('introduction', permanent=True)
 
     def get_context_data(self):
         if self.request.session.get('user_id') is not None:
