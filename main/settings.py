@@ -25,7 +25,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # remove all but heroku
-ALLOWED_HOSTS = ['django-todos-7caa0bc186c8.herokuapp.com']
+ALLOWED_HOSTS = ['dojango-2bea5c2d6d6c.herokuapp.com']
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
