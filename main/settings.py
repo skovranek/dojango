@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # dict value set as '' to evaluate as False by bool()
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'm&xdy0ni7g@llj1wd%e3wz3q&ulsry5wk8&i+6*v77k@u*$y2+')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # remove all but heroku
 ALLOWED_HOSTS = ['django-todos-7caa0bc186c8.herokuapp.com']
