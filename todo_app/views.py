@@ -145,6 +145,7 @@ def library_get(request, object_type):
             object_list = Motto.objects.filter(user=request.session['user_id'])
         elif object_type == 'Questions':
             object_list = Question.objects.filter(user=request.session['user_id'])
+        messages.success(request, 'Viewing all ' + object_type + '.')
         return render(request, 'library.html', {'object_type': object_type, 'object_list': object_list})
 
 
