@@ -4,53 +4,55 @@
 {% block content %}
 <div class="center">
 <h1 class="underline">Introduction</h1>
-<p>Welcome to DoJango!</p>
+<h1>Welcome to DoJango!</h1>
 
-What the heck is DoJango?
-It's yet another todo list app.
+<h2>Introduction</h2>
+<h3>What the heck is DoJango?</h3>
+<p>It's yet another todo list app.</p>
 
-What makes this todo list app unique?
-I made it myself for myself.
+<h3>What makes this todo list app unique?</h3>
+<p>I made it myself for myself.</p>
 
-Why do you call it DoJango?
-Do + Django = DoJango
+<h3>Why do you call it DoJango?</h3>
+<p>Do + Django = DoJango</p>
 
-How did you make it?
-DoJango is a python CRUD web app built with the Django framework hosted on Heroku with a PostgreSQL database.
+<h3>How did you make it?</h3>
+<p>DoJango is a python CRUD web app built with the Django framework hosted on Heroku with a PostgreSQL database.</p>
 
-What is it not?
-It's not a terminal or CLI based tool, or modeled as such. The retro black and green color scheme is just a design choice.
+<h3>What is it not?</h3>
+<p>It's not a terminal or CLI based tool, or modeled as such. The retro black and green color scheme is just a design choice.</p>
 
-Getting Started
-At the top of this page is the nav bar, where you can click 'today' to go to the Today's Tasks page. It shows you the current date and time, as well as a list of today's tasks. Since you have not made any tasks yet, there are none.
+<h2>Getting Started</h2>
+<p>At the top of this page is the nav bar, where you can click 'today' to go to the 'Today's Tasks' page. It shows you the current date and time, as well as a todo list. Since you have not made any tasks yet, there are none.</p>
 
-Before you can add a task, you must add one category or project since every task must be grouped in a category or project. Click 'add category or project' to go to the 'Add Category or Project' page.
+<p>Before you can add a task, you must add one category or project since every task must be grouped in a category or project. Click 'add category or project' to go to the 'Add Category or Project' page.</p>
 
-Choose either a category (default), or check project. Add a name for the category or project, then click 'Add'. You will be taken back to 'Today's Tasks'. There should be a success message in the top left corner below the nav bar.
+<p>Choose either a category (default), or check project. Add a name for the category or project, then click 'Add'. You will be taken back to 'Today's Tasks'. There should be a success message in the top left corner below the nav bar.</p>
 
-Now you may add a task, so click 'add task' to go to the 'Add Task' page. Select your new category or project. Add a name for the task. Select the task's priority on your todo list, from 1 (highest) to 10 (lowest), or 0 (no listed priority). Set the start date for today, and choose the due date, such as tomorrow. Finally, click 'Add Task'. You will be taken back to the Today's Tasks, and you should see a success message in the top left corner below the nav bar.
+<p>Now you may add a task, so click 'add task' to go to the 'Add Task' page. Select your new category or project. Add a name for the task. Select the task's priority on your todo list, from 1 (highest) to 10 (lowest), or 0 (no listed priority). Set the start date for today, and choose the due date, such as tomorrow. Finally, click 'Add Task'. You will be taken back to 'Today's Tasks', and you should see a success message in the top left corner below the nav bar.</p>
 
-Congratulations, you've added a task to your todo list!
+<p>Congratulations, you've added a task to your todo list!</p>
 
-It doesn't stop there. You now have a todo list displayed with your sole task. You can click the task name to check it off as 'Done', as well as edit, delete or add subtasks. Your subtasks are similar to your tasks, and you may add counters to your subtasks. This is great for repeated tasks, such as exercise reps, or to keep track of how many pages you've read in a book. It's motivating to make incremental progress through the day.
+<p>It doesn't stop there. You now have a todo list displayed with your sole task. You can click the task name to check it off as 'Done', as well as edit, delete or add subtasks. Your subtasks are similar to your tasks, and you may add counters to your subtasks. This is great for repeated tasks, such as exercise reps, or to keep track of how many pages you've read in a book. It's motivating to make incremental progress through the day.</p>
 
-Today's Tasks only shows tasks that start today. If you want any tasks to roll over from yesterday, click 'copy yesterday'. This will create a copy of all of yesterday's tasks. You may delete any tasks you do not need from yesterday.
+<p>'Today's Tasks' only shows tasks that start today. If you want any tasks to roll over from yesterday, click 'copy yesterday'. This will create a copy of all of yesterday's tasks. You may delete any tasks you do not need from yesterday.</p>
 
-You have several options on the nav bar to organize your todo list. DoJango is more than just a daily todo list.
+<h2>Navigation</h2>
+<p>You have several options on the nav bar to organize your todo list. DoJango is more than just a daily todo list.</p>
 
-proj -> Projects
-This lets you view your projects and their tasks, subtasks and counters. Great for project management.
+<h3>proj -> Projects</h3>
+<p>This lets you view your projects and their tasks, subtasks and counters. Great for project management.</p>
 
-due -> Deadlines
-This lets you see your tasks with upcoming deadlines. Due dates are organized by Today, Tomorrow, This Week, Next Week, This Month, Next Thirty Days, This Year, After This Year. Tasks can appear in more than one grouping. Tasks with expired due dates do not appear.
+<h3>due -> Deadlines</h3>
+<p>This lets you see your tasks with upcoming deadlines. Due dates are organized by Today, Tomorrow, This Week, Next Week, This Month, Next Thirty Days, This Year, After This Year. Tasks can appear in more than one grouping. Tasks with expired due dates do not appear.</p>
 
-prev -> Previous # Days
-This lets you see which dates had tasks started then. You can look back on 7, 14, 30, 100 and 365 past days. Click on a date to go to that date on the 'Archive' page.
+<h3>prev -> Previous # Days</h3>
+<p>This lets you see which dates had tasks started then. You can look back on 7, 14, 30, 100 and 365 past days. Click on a date to go to that date on the 'Archive' page.</p>
 
-lib -> Library
-This page lets you see all your categories/projects, tasks, and (perhaps most importantly) unfinished tasks. Click on the '#' to see the start date of the task on the 'Archive' page.
+<h3>lib -> Library</h3>
+<p>This page lets you see all your categories/projects, tasks, and (perhaps most importantly) unfinished tasks. Click on the '#' to see the start date of the task on the 'Archive' page.</p>
 
-arch -> Archive
-This page lets you see the todo list of any date.
+<h3>arch -> Archive</h3>
+<p>This page lets you see the todo list of any date.</p>
 </div>
 {% endblock %}
