@@ -83,7 +83,7 @@ def copy_yesterday(request):
     if len(yesterday_tasks) > 0:
         for task in yesterday_tasks:
             # fields = ['user', 'category', 'start', 'due', 'name', 'finished', 'priority']
-            data = {'user': task.user.id, 'category': task.category.id, 'start': now, 'due': tomorrow, 'name': task.name, 'finished': False, 'priority': task.priority}
+            data = {'user': task.user, 'category': task.category.id, 'start': now, 'due': tomorrow, 'name': task.name, 'finished': False, 'priority': task.priority}
             form = TaskForm(data)
             if form.is_valid():
                 messages.success(request, 'Copied \'%s\' from yesterday.' % task)
@@ -105,7 +105,7 @@ def copy_task(request, task_id):
     task = Task.objects.get(pk=task_id)
     now = timezone.localtime(timezone.now())
     # fields = ['user', 'category', 'start', 'due', 'name', 'finished', 'priority']
-    data = {'user': task.user.id, 'category': task.category.id, 'start': now, 'due': now + datetime.timedelta(1), 'name': task.name, 'finished': False, 'priority': task.priority}
+    data = {'user': task.user, 'category': task.category.id, 'start': now, 'due': now + datetime.timedelta(1), 'name': task.name, 'finished': False, 'priority': task.priority}
     form = TaskForm(data)
     if form.is_valid():
             new_task = form.save()
@@ -230,7 +230,7 @@ def add_category(request):
                 form.save()
                 messages.success(request, 'Category/Project created.')
                 categories = Category.objects.filter(user=request.session['user_id'])
-                return redirect('add_task')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:

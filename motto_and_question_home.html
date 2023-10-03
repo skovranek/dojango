@@ -2,12 +2,49 @@
 {% extends 'base.html' %}
 {% block title %}HOME{% endblock %}
 {% block content %}
+<div class='center'>
+<!-- motto -->
+<p>
+  {% if motto %}
+  <a href="{% url 'edit_motto' %}">{{ motto }}</a>
+{% else %}
+  <a href="{% url 'add_motto' %}">add motto</a>
+{% endif %}
+</p>
+<!-- question -->
+{% if question %}
+  <a href="{% url 'add_answer' question.id %}">{{ question }} </a>
+  <a href="{% url 'edit_question' question.id %}"> +</a>
+  <form class="inline" method="POST" action="{% url 'delete' %}">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ question.id }}">
+    <input type="hidden" name="object_type" value="question">
+    <button class="delete" type="submit" aria-label="Submit">X</button>
+  </form>
+  <p></p>
+  {% if question.answer_set.all %}
+    {% for answer in question.answer_set.all %}
+      <p class='inline'>{{ answer }} </p>
+      <a href="{% url 'edit_answer' answer.id %}"> +</a>
+      <form class="inline" method="POST" action="{% url 'delete' %}">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{ answer.id }}">
+        <input type="hidden" name="object_type" value="answer">
+        <button class="delete" type="submit" aria-label="Submit">X</button>
+      </form>
+    {% endfor %}
+  {% else %}
+  <a href="{% url 'add_answer' question.id %}">What is your resolution to this question?</a>
+  {% endif %}
+{% else %}
+  <a href="{% url 'add_question' %}">What question needs resolution today?</a>
+{% endif %}
+</div>
 <h1 class="underline">Today's Tasks</h1>
 <nav>
   <p class="inline">{% now 'D, M jS, P' %}</p> |
   <a href="{% url 'add_task' %}">add task</a> |
-  <a href="{% url 'copy_yesterday' %}">copy yesterday</a> |
-  <a href="{% url 'add_category' %}">add category or project</a>
+  <a href="{% url 'copy_yesterday' %}">copy yesterday</a>
 </nav>
 <br>
 {% if tasks|length > 0 %}
