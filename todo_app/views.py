@@ -238,7 +238,7 @@ def add_category(request):
                 return render(request, 'add_pages/add_category.html')
         else:
             messages.error(request, 'You may not add Categories/Projects to other Users.', extra_tags='Easter Egg:')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'add_pages/add_category.html')
 
@@ -252,7 +252,7 @@ def add_task(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Task created.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -260,7 +260,7 @@ def add_task(request):
                 return render(request, 'add_pages/add_task.html', {'categories': categories})
         else:
             messages.error(request, 'You may not add Tasks to other Users.', extra_tags='Easter Egg:')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'add_pages/add_task.html', {'categories': categories})
 
@@ -274,7 +274,7 @@ def add_subtask(request, task_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'SubTask created.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -284,7 +284,7 @@ def add_subtask(request, task_id):
             return render(request, 'add_pages/add_subtask.html', {'task': task})
     else:
         messages.error(request, 'You may only add SubTasks to your own Tasks.')
-        return redirect('home')
+        return redirect(request.META.get('HTTP_REFERER'))
 
 
 @csrf_protect
@@ -307,7 +307,7 @@ def add_question(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Question created.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -315,7 +315,7 @@ def add_question(request):
                 return render(request, 'add_pages/add_question.html')
         else:
             messages.error(request, 'You may not add Questions to other Users.')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'add_pages/add_question.html')
 
@@ -329,7 +329,7 @@ def add_answer(request, question_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Answer created.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -339,7 +339,7 @@ def add_answer(request, question_id):
             return render(request, 'add_pages/add_answer.html', {'question': question})
     else:
         messages.error(request, 'You may only add Answers to other your own Questions.')
-        return redirect('home')
+        return redirect(request.META.get('HTTP_REFERER'))
 
 
 @csrf_protect
@@ -350,7 +350,7 @@ def add_motto(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Motto created.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -358,7 +358,7 @@ def add_motto(request):
                 return render(request, 'add_pages/add_motto.html')
         else:
             messages.error(request, 'You may not add Mottos to other Users.')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'add_pages/add_motto.html')
 
@@ -373,7 +373,7 @@ def edit_category(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Category/Project edited.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                         for err in form.errors[error]:
@@ -381,7 +381,7 @@ def edit_category(request):
                 return render(request, 'edit_pages/edit_category.html', {'categories': categories})
         else:
             messages.error(request, 'You may not edit Categories/Projects of other Users.')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'edit_pages/edit_category.html', {'categories': categories})
 
@@ -396,7 +396,7 @@ def edit_task(request, task_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Task edited.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                         for err in form.errors[error]:
@@ -404,7 +404,7 @@ def edit_task(request, task_id):
                 return render(request, 'edit_pages/edit_task.html', {'task': task, 'categories': categories})
         else:
             messages.error(request, 'You may not edit Tasks of other Users.', extra_tags='Easter Egg:')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'edit_pages/edit_task.html', {'task': task, 'categories': categories})
 
@@ -418,7 +418,7 @@ def edit_subtask(request, subtask_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'SubTask edited.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -428,7 +428,7 @@ def edit_subtask(request, subtask_id):
             return render(request, 'edit_pages/edit_subtask.html', {'subtask': subtask})
     else:
         messages.error(request, 'You may only edit SubTasks of your own Tasks.')
-        return redirect('home')
+        return redirect(request.META.get('HTTP_REFERER'))
 
 
 @csrf_protect
@@ -440,7 +440,7 @@ def edit_question(request, question_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Question edited.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -448,7 +448,7 @@ def edit_question(request, question_id):
                 return render(request, 'edit_pages/edit_question.html', {'question':question})
         else:
             messages.error(request, 'You may not edit Questions of other Users.')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'edit_pages/edit_question.html', {'question': question})
 
@@ -462,7 +462,7 @@ def edit_answer(request, answer_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Answer edited.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -472,7 +472,7 @@ def edit_answer(request, answer_id):
             return render(request, 'edit_pages/edit_answer.html', {'answer': answer})
     else:
         messages.error(request, 'You may not edit Answers of other Users.')
-        return redirect('home')
+        return redirect(request.META.get('HTTP_REFERER'))
 
 
 @csrf_protect
@@ -485,7 +485,7 @@ def edit_motto(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Motto edited.')
-                return redirect('home')
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -493,7 +493,7 @@ def edit_motto(request):
                 return render(request, 'edit_pages/edit_motto.html', {'mottos': mottos})
         else:
             messages.error(request, 'You may not edit Mottos of other Users.')
-            return redirect('home')
+            return redirect(request.META.get('HTTP_REFERER'))
     else:
         return render(request, 'edit_pages/edit_motto.html', {'mottos': mottos})
 
