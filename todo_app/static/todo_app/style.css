@@ -7,7 +7,8 @@ li,
 nav,
 p,
 td,
-th {
+th,
+ul {
   color: lime;
   font-family: "Courier New", Courier, monospace;
   font-weight: normal;
