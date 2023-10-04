@@ -14,12 +14,15 @@ th {
   text-decoration: none;
 }
 
-ul li {
-  list-style-type: square;
-  color: lime;
-  font-family: "Courier New", Courier, monospace;
+h1,
+h2,
+h3 {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.faq {
+  list-style-type: square;
 }
 
 a:hover {
