@@ -231,7 +231,7 @@ def add_category(request):
                 form.save()
                 messages.success(request, 'Category/Project created.')
                 categories = Category.objects.filter(user=request.session['user_id'])
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('add_task')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -253,7 +253,7 @@ def add_task(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Task created.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -275,7 +275,7 @@ def add_subtask(request, task_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'SubTask created.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -308,7 +308,7 @@ def add_question(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Question created.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -330,7 +330,7 @@ def add_answer(request, question_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Answer created.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -351,7 +351,7 @@ def add_motto(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Motto created.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -374,7 +374,7 @@ def edit_category(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Category/Project edited.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                         for err in form.errors[error]:
@@ -397,7 +397,7 @@ def edit_task(request, task_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Task edited.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                         for err in form.errors[error]:
@@ -419,7 +419,7 @@ def edit_subtask(request, subtask_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'SubTask edited.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -441,7 +441,7 @@ def edit_question(request, question_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Question edited.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -463,7 +463,7 @@ def edit_answer(request, answer_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Answer edited.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
@@ -486,7 +486,7 @@ def edit_motto(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Motto edited.')
-                return redirect(request.META.get('HTTP_REFERER'))
+                return redirect('home')
             else:
                 for error in form.errors:
                     for err in form.errors[error]:
