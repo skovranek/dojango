@@ -15,6 +15,25 @@ It is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/C
 ## Download/Install
 ## Configure
 ## Implement
+## Dependencies
+runtime.txt
+```
+python-3.12.0
+```
+requirements.txt
+```
+django>=4.2,<5.0
+gunicorn>=21.2,<22.0
+dj-database-url>=2.0,<3.0
+whitenoise[brotli]>=6.0,<7.0
+psycopg; sys_platform == "linux"
+psycopg[binary]; sys_platform != "linux"
+```
+Non-Django dependencies in main/settings.py:
+```
+MIDDLEWARE = ['whitenoise.middleware.WhiteNoiseMiddleware']
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+```
 ## Testing
 The website is manually tested to ensure the UI and backend function as expected.
 ## Contact
