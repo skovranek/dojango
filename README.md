@@ -1,7 +1,10 @@
 # DoJango
 Do + Django = DoJango
 
-View: [dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuapp.com/)
+View: [DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
+
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+
 ## Table of Contents
 
 1) [What](#what)
@@ -22,14 +25,14 @@ View: [dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuap
 DoJango is yet another todo list web app.
 
 ## Why
-I challenged myself to build a simple web app using Python. DoJango demonstrates my knowledge of Python, Django and backend development.
+I challenged myself to build a simple web app using Python. DoJango demonstrates knowledge of Python, Django and backend development.
 
 ## How
 DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database.
 
 ## Features
 DoJango's features and how to use them are explained on its landing page:
-[DoJango Intro](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
+[DoJango](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
 - Models: Categories/Projects, Tasks, SubTasks, Counters
 - Todo List: See tasks organized by priority and earliest due date.
@@ -41,7 +44,18 @@ DoJango's features and how to use them are explained on its landing page:
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 
-2) Install the Heroku CLI: [Heroku CLI Installation](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+```
+$ gh repo fork skovranek/dojango --clone=true
+```
+
+2) Install the Heroku CLI and login: [Heroku CLI Installation](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+```
+$ brew tap heroku/brew && brew install heroku
+
+$ heroku --version
+
+$ heroku login
+```
 
 ## Configure
 1) In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address:
@@ -66,12 +80,19 @@ $ heroku config:set DJANGO_DEBUG=True
 
 3) Using the Heroku CLI, create a Heroku remote for the existing app in the forked repo on your local machine. Do not deploy yet. [Deploying to Heroku with Git](https://devcenter.heroku.com/articles/git)
 
+```
+$ do something
+```
+
 4) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost. [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
 ```
 $ heroku addons:create heroku-postgresql:mini
 ```
 
 5) Now you may deploy to Heroku with Git, following the instructions linked above.
+```
+$ do something
+```
 
 6) Check the Heroku log to ensure the app is online and configured correctly:
 ```
