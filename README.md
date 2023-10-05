@@ -29,12 +29,14 @@ DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/w
 
 ## Features
 DoJango's features and how to use them are explained on its landing page:
-[Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
+[DoJango Intro](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
-- Todos etc
-- other stuff
-- more stuff
-- stuff
+- Models: Categories/Projects, Tasks, SubTasks, Counters
+- Todo List: See tasks organized by priority and earliest due date.
+- Projects: See tasks associated with an ongoing project.
+- Due Dates: See tasks listed by due date.
+- Search: Find tasks by start date, due date, finished, unfinished, etc. 
+- Users are distinguished by session id. ([Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but that was unnessecary for such a simple app.)
 
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
@@ -83,7 +85,7 @@ If you run into any issues, you may check these articles for additional guidance
 [Deploying Django on Heroku](https://devcenter.heroku.com/articles/deploying-python)
 
 ## Customization
-asdfasdf
+You may customize DoJango's design by modifying the CSS style in the `todo_app/static/style.css` file.
 
 ## Dependencies
 runtime.txt
@@ -111,4 +113,5 @@ This project is just a proof of concept and I consider it finished.
 
 ## License
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+
 DoJango is released under the [GNU Lesser General Public License v3.0](LICENSE).
