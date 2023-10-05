@@ -67,13 +67,13 @@ $ heroku config:set DJANGO_DEBUG=True
 ```
 $ heroku addons:create heroku-postgresql:mini
 ```
-
 5) Now you may deploy to Heroku with Git, following the instructions linked above.
 
 6) Check the Heroku log to ensure the app is online and configured correctly:
 ```
 $ heroku logs --tail
 ```
+
 If you run into any issues, you may check these articles for additional guidance: 
 
 [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true)
