@@ -1,9 +1,7 @@
 # DoJango
 Do + Django = DoJango
 
-Hosted on Heroku:
-
-[dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuapp.com/)
+View: [dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 ## Table of Contents
 
 1) [What](#what)
@@ -23,13 +21,13 @@ Hosted on Heroku:
 DoJango is yet another todo list web app.
 
 ## Why
-I made DoJango to challenge myself to build a real functional web app using Python. It demonstrates my knowledge of Python, Django and backend development.
+I challenged myself to build a simple web app using Python. DoJango demonstrates my knowledge of Python, Django and backend development.
 
 ## How
-It is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database.
+DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database.
 
 ## Features
-DoJango's features and how to use them are explained on its site:
+DoJango's features and how to use them are explained on its landing page:
 [Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
 - Todos etc
