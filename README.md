@@ -4,6 +4,20 @@ Do + Django = DoJango
 Hosted on Heroku:
 
 [dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuapp.com/)
+## Table of Contents
+
+1) [What](#what)
+2) [Why](#why)
+3) [How](#how)
+4) [Features](#features)
+5) [Download/Install](#downloadinstall)
+6) [Configure](#configure)
+7) [Implement](#implement)
+8) [Customization](#customization)
+9) [Dependencies](#dependencies)
+10) [Testing](#testing)
+11) [Contact](#contact)
+12) [Contribute](#contribute)
 
 ## What
 DoJango is yet another todo list web app.
@@ -15,11 +29,13 @@ I made DoJango to challenge myself to build a real functional web app using Pyth
 It is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database.
 
 ## Features
-DoJango's features and how to use them are explained on its' site:
+DoJango's features and how to use them are explained on its site:
 [Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
 -- Todos etc
-
+-- other stuff
+-- more stuff
+-- stuff
 
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
@@ -65,6 +81,9 @@ If you run into any issues, you may check these articles for additional guidance
 [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true)
 
 [Deploying Django on Heroku](https://devcenter.heroku.com/articles/deploying-python)
+
+## Customization
+asdfasdf
 
 ## Dependencies
 runtime.txt
