@@ -2,6 +2,7 @@
 Do + Django = DoJango
 
 Hosted on Heroku:
+
 [dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 
 ## What
@@ -53,7 +54,9 @@ Check the Heroku log to ensure the app is online and configured correctly:
 heroku logs --tail
 ```
 If you run into any issues, you may check these articles for additional guidance: 
+
 [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true)
+
 [Deploying Django on Heroku](https://devcenter.heroku.com/articles/deploying-python)
 
 ## Dependencies
@@ -69,6 +72,7 @@ dj-database-url>=2.0,<3.0
 whitenoise[brotli]>=6.0,<7.0
 psycopg; sys_platform == "linux"
 psycopg[binary]; sys_platform != "linux"
+```
 
 ## Testing
 The website is manually tested to ensure the UI and backend function as expected.
