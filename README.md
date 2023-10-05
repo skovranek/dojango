@@ -16,6 +16,7 @@ View: [dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuap
 10) [Testing](#testing)
 11) [Contact](#contact)
 12) [Contribute](#contribute)
+13) [License](#license)
 
 ## What
 DoJango is yet another todo list web app.
@@ -107,3 +108,7 @@ Questions, issues or suggestions: mattjskov at gmail.com
 
 ## Contribute
 This project is just a proof of concept and I consider it finished.
+
+## License
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+DoJango is released under the [GNU Lesser General Public License v3.0](LICENSE).
