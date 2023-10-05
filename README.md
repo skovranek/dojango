@@ -32,10 +32,10 @@ It is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/C
 DoJango's features and how to use them are explained on its site:
 [Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
--- Todos etc
--- other stuff
--- more stuff
--- stuff
+- Todos etc
+- other stuff
+- more stuff
+- stuff
 
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
