@@ -1,7 +1,8 @@
 # DoJango
 Do + Django = DoJango
 
-[#DoJango_on_Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
+Hosted on Heroku:
+[dojango-2bea5c2d6d6c.herokuapp.com](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 
 ## What
 DoJango is yet another todo list web app. It demonstrates my knowledge of Python, Django and backend development.
