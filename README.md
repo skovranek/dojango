@@ -12,7 +12,7 @@ View: [DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 3) [How](#how)
 4) [Features](#features)
 5) [Download/Install](#downloadinstall)
-6) [Implement and Configure](#implement-and-configure)
+6) [Configure and Implement](#configure-and-implement)
 7) [Customization](#customization)
 8) [Dependencies](#dependencies)
 9) [Testing](#testing)
@@ -73,45 +73,45 @@ $ heroku login
 2) Using the Heroku CLI, create a Heroku remote for the existing app in the forked repo on your local machine. (Do not deploy yet): [Deploying to Heroku with Git](https://devcenter.heroku.com/articles/git)
 
 ```
-$ heroku git:remote -a your-dojango-app
+$ heroku git:remote -a your-app-name
 ```
 
-3) Configure the app:
-   - In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address.
+3) In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address.
 ```python
-ALLOWED_HOSTS = ['your-dojango-app.herokuapp.com']
+ALLOWED_HOSTS = ['your-app-name-2bea5c2d6d6c.herokuapp.com']
 ```
-- 
-  - Add your own secret key to the configuration variables of your app: [Heroku Config Vars](https://devcenter.heroku.com/articles/config-vars)
+4) Add your own secret key to the configuration variables of your app: [Heroku Config Vars](https://devcenter.heroku.com/articles/config-vars)
 ```
 $ heroku config:set DJANGO_SECRET_KEY=your_unique_secret_key
 ```
--
-  - You may also choose to enable debug mode while deploying and testing. Change it to an empty string to disable debug mode later.
+5) You may also choose to enable debug mode while deploying and testing. Change it to an empty string to disable debug mode later.
 ```
 $ heroku config:set DJANGO_DEBUG=True
 ```
 
-4) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost: [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
+6) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost: [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
 ```
 $ heroku addons:create heroku-postgresql:mini
 ```
 
-5) Prepare the database for your app.
+7) Prepare the database for your app.
 ```
 $ heroku run python manage.py makemigrations
 
 $ heroku run python manage.py migrate
+```
 
+8) Create an administrator account. Follow the prompts.
+```
 $ heroku run python manage.py createsuperuser
 ```
 
-6) Now you may deploy to Heroku with Git, following the rest of the instructions from the [link](https://devcenter.heroku.com/articles/git) in Step 2.
+8) Now you may deploy to Heroku with Git, following the rest of the instructions from the [link](https://devcenter.heroku.com/articles/git) in Step 2.
 ```
 $ git push heroku main
 ```
 
-7) Check the Heroku log to ensure the app is online and configured correctly.
+9) Check the Heroku log to ensure the app is online and configured correctly.
 ```
 $ heroku logs --tail
 ```
