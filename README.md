@@ -45,11 +45,13 @@ DoJango's features and how to use them are explained on its landing page:
 
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-   - You may use the GitHub CLI: [GitHub CLI](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli)
+
+- You may use the GitHub CLI: [GitHub CLI](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli)
 ```
 $ gh repo fork skovranek/dojango --clone=true
 ```
-   - Or you may use the 'Fork' button above, then clone your forked repo: [Browser](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=webui)
+
+- Or you may use the 'Fork' button above, then clone your forked repo: [Browser](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=webui)
 ```
 $ git clone https://github.com/YOUR-USERNAME/dojango
 ```
@@ -68,7 +70,7 @@ $ heroku login
 ## Configure
 1) In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address:
 ```python
-ALLOWED_HOSTS = ['your-app-name-2f9sdf4f5.herokuapp.com']
+ALLOWED_HOSTS = ['your-dojango-app.herokuapp.com']
 ```
 
 2) Add your own secret key to the configuration variables of your app: [Heroku Config Vars](https://devcenter.heroku.com/articles/config-vars)
@@ -88,7 +90,7 @@ $ heroku config:set DJANGO_DEBUG=True
 2) Using the Heroku CLI, create a Heroku remote for the existing app in the forked repo on your local machine. Do not deploy yet. [Deploying to Heroku with Git](https://devcenter.heroku.com/articles/git)
 
 ```
-$ do something
+$ heroku git:remote -a your-dojango-app
 ```
 
 3) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost. [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
@@ -96,12 +98,21 @@ $ do something
 $ heroku addons:create heroku-postgresql:mini
 ```
 
-4) Now you may deploy to Heroku with Git, following the instructions linked above.
+4) Prepare your database for your app.
 ```
-$ do something
+$ heroku run python manage.py makemigrations
+
+$ heroku run python manage.py migrate
+
+$ heroku run python manage.py createsuperuser
 ```
 
-5) Check the Heroku log to ensure the app is online and configured correctly:
+5) Now you may deploy to Heroku with Git, following the rest of the instructions from the [link](https://devcenter.heroku.com/articles/git) in Step 2.
+```
+$ git push heroku main
+```
+
+6) Check the Heroku log to ensure the app is online and configured correctly:
 ```
 $ heroku logs --tail
 ```
@@ -111,6 +122,8 @@ If you run into any issues, you may check these articles for additional guidance
 [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true)
 
 [Deploying Django on Heroku](https://devcenter.heroku.com/articles/deploying-python)
+
+[Medium Article - Deploying Django App to Heroku: Full Guide](https://medium.com/quick-code/deploying-django-app-to-heroku-full-guide-6ff7252578d7)
 
 ## Customization
 You may customize DoJango's design by modifying the CSS style in the `todo_app/static/style.css` file.
