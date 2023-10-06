@@ -34,21 +34,30 @@ DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/w
 DoJango's features and how to use them are explained on its landing page:
 [DoJango](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
-- Models: Categories/Projects, Tasks, SubTasks, Counters
-- Todo List: See tasks organized by priority and earliest due date.
-- Projects: See tasks associated with an ongoing project.
-- Due Dates: See tasks listed by due date.
-- Search: Find tasks by start date, due date, finished, unfinished, etc. 
-- Users are distinguished by session id. ([Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but that was unnessecary for such a simple app.)
+- Add, Edit and Delete Models: Categories/Projects, Tasks, SubTasks, Counters.
+- "Today's Tasks": See daily todo list organized by priority and earliest due date.
+- "Projects": See tasks associated with an ongoing project.
+- "Deadlines": See tasks listed by due date.
+- Filter: Find tasks by start date, due date, finished, unfinished, etc. 
+- Users are distinguished by browser session id. 
+> **Note**
+> [Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but I decided that registering an account was an unnecessary burden to ask of potential users of such a straightforward app.)
 
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 
+- You may use the GitHub CLI: [GitHub CLI](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli)
 ```
 $ gh repo fork skovranek/dojango --clone=true
 ```
+- Or you may use the 'Fork' button above, then clone your forked repo: [Browser](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=webui)
+```
+$ git clone https://github.com/YOUR-USERNAME/dojango
+```
 
-2) Install the Heroku CLI and login: [Heroku CLI Installation](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+2) Create and verify a Heroku account: [Heroku Sign Up](https://signup.heroku.com/), [Heroku Account Verification](https://devcenter.heroku.com/articles/account-verification)
+
+3) Install the Heroku CLI, verify the version, and then login: [Heroku CLI Installation](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
 ```
 $ brew tap heroku/brew && brew install heroku
 
@@ -74,27 +83,26 @@ $ heroku config:set DJANGO_DEBUG=True
 ```
 
 ## Implement
-1) Create and verify a Heroku account: [Heroku Sign Up](https://signup.heroku.com/), [Heroku Account Verification](https://devcenter.heroku.com/articles/account-verification)
 
-2) Subscribe to the Ecos Dynos Plan: [Heroku Ecos Dyno Hours](https://devcenter.heroku.com/articles/eco-dyno-hours)
+1) Subscribe to the Ecos Dynos Plan: [Heroku Ecos Dyno Hours](https://devcenter.heroku.com/articles/eco-dyno-hours)
 
-3) Using the Heroku CLI, create a Heroku remote for the existing app in the forked repo on your local machine. Do not deploy yet. [Deploying to Heroku with Git](https://devcenter.heroku.com/articles/git)
+2) Using the Heroku CLI, create a Heroku remote for the existing app in the forked repo on your local machine. Do not deploy yet. [Deploying to Heroku with Git](https://devcenter.heroku.com/articles/git)
 
 ```
 $ do something
 ```
 
-4) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost. [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
+3) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost. [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
 ```
 $ heroku addons:create heroku-postgresql:mini
 ```
 
-5) Now you may deploy to Heroku with Git, following the instructions linked above.
+4) Now you may deploy to Heroku with Git, following the instructions linked above.
 ```
 $ do something
 ```
 
-6) Check the Heroku log to ensure the app is online and configured correctly:
+5) Check the Heroku log to ensure the app is online and configured correctly:
 ```
 $ heroku logs --tail
 ```
