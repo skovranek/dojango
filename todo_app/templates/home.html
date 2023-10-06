@@ -3,7 +3,6 @@
 {% block title %}TODAY{% endblock %}
 {% block content %}
 <h1 class="underline">Today's Tasks</h1>
-<p class="inline">{% now 'P D, M jS' %}</p>
 <nav>
   <a href="{% url 'add_task' %}">add task</a> |
   <a href="{% url 'add_category' %}">add category or project</a> |
@@ -12,6 +11,9 @@
 <br>
 {% if tasks|length > 0 %}
   <table>
+    <tr>
+      <th colspan="4">{% now 'P D, M jS' %}</th>
+    </tr>
     <tr>
       <th>Task</th>
       <th>Category</th>
