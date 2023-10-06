@@ -41,7 +41,7 @@ DoJango's features and how to use them are explained on its landing page:
 - [x] Filter: Find tasks by start date, due date, finished, unfinished, etc. 
 - [x] Users are distinguished by browser session id. 
 > **Note**
-> [Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but I decided that registering an account was an unnecessary burden to ask of potential users of such a straightforward app.)
+> [Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but I decided that registering an account was an unnecessary burden to ask of potential users of such a straightforward app.
 
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
@@ -56,7 +56,7 @@ $ gh repo fork skovranek/dojango --clone=true
 $ git clone https://github.com/YOUR-USERNAME/dojango
 ```
 
-2) Create and verify a Heroku account: [Heroku Sign Up](https://signup.heroku.com/), [Heroku Account Verification](https://devcenter.heroku.com/articles/account-verification)
+2) Create and verify a Heroku account: [Heroku Sign Up](https://signup.heroku.com/) & [Heroku Account Verification](https://devcenter.heroku.com/articles/account-verification)
 
 3) Install the Heroku CLI, verify the version, and then login: [Heroku CLI Installation](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
 ```
@@ -67,8 +67,19 @@ $ heroku --version
 $ heroku login
 ```
 
-## Configure
-1) In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address:
+## Implement and Configure
+
+1) Subscribe to the Ecos Dynos Plan: [Heroku Ecos Dyno Hours](https://devcenter.heroku.com/articles/eco-dyno-hours)
+
+2) Using the Heroku CLI, create a Heroku remote for the existing app in the forked repo on your local machine. (Do not deploy yet): [Deploying to Heroku with Git](https://devcenter.heroku.com/articles/git)
+
+```
+$ heroku git:remote -a your-dojango-app
+```
+
+3) Configure the app:
+
+1) In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address.
 ```python
 ALLOWED_HOSTS = ['your-dojango-app.herokuapp.com']
 ```
@@ -83,22 +94,12 @@ $ heroku config:set DJANGO_SECRET_KEY=your_unique_secret_key
 $ heroku config:set DJANGO_DEBUG=True
 ```
 
-## Implement
-
-1) Subscribe to the Ecos Dynos Plan: [Heroku Ecos Dyno Hours](https://devcenter.heroku.com/articles/eco-dyno-hours)
-
-2) Using the Heroku CLI, create a Heroku remote for the existing app in the forked repo on your local machine. Do not deploy yet. [Deploying to Heroku with Git](https://devcenter.heroku.com/articles/git)
-
-```
-$ heroku git:remote -a your-dojango-app
-```
-
-3) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost. [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
+4) Create a database for your app by subscribing to the Heroku PostgreSQL Mini plan, for an additional cost: [Provision Heroku PostgreSQL Mini](https://devcenter.heroku.com/articles/provisioning-heroku-postgres)
 ```
 $ heroku addons:create heroku-postgresql:mini
 ```
 
-4) Prepare your database for your app.
+5) Prepare the database for your app.
 ```
 $ heroku run python manage.py makemigrations
 
@@ -107,12 +108,12 @@ $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
 ```
 
-5) Now you may deploy to Heroku with Git, following the rest of the instructions from the [link](https://devcenter.heroku.com/articles/git) in Step 2.
+6) Now you may deploy to Heroku with Git, following the rest of the instructions from the [link](https://devcenter.heroku.com/articles/git) in Step 2.
 ```
 $ git push heroku main
 ```
 
-6) Check the Heroku log to ensure the app is online and configured correctly:
+7) Check the Heroku log to ensure the app is online and configured correctly.
 ```
 $ heroku logs --tail
 ```
