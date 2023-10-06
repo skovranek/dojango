@@ -12,14 +12,13 @@ View: [DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 3) [How](#how)
 4) [Features](#features)
 5) [Download/Install](#downloadinstall)
-6) [Configure](#configure)
-7) [Implement](#implement)
-8) [Customization](#customization)
-9) [Dependencies](#dependencies)
-10) [Testing](#testing)
-11) [Contact](#contact)
-12) [Contribute](#contribute)
-13) [License](#license)
+6) [Implement and Configure](#implement-and-configure)
+7) [Customization](#customization)
+8) [Dependencies](#dependencies)
+9) [Testing](#testing)
+10) [Contact](#contact)
+11) [Contribute](#contribute)
+12) [License](#license)
 
 ## What
 DoJango is yet another todo list web app.
@@ -78,18 +77,17 @@ $ heroku git:remote -a your-dojango-app
 ```
 
 3) Configure the app:
-
-1) In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address.
+   - In the 'main/settings.py' file, change the 'ALLOWED_HOSTS' setting to include your app's web address.
 ```python
 ALLOWED_HOSTS = ['your-dojango-app.herokuapp.com']
 ```
-
-2) Add your own secret key to the configuration variables of your app: [Heroku Config Vars](https://devcenter.heroku.com/articles/config-vars)
+- 
+  - Add your own secret key to the configuration variables of your app: [Heroku Config Vars](https://devcenter.heroku.com/articles/config-vars)
 ```
 $ heroku config:set DJANGO_SECRET_KEY=your_unique_secret_key
 ```
-
-3) You may also choose to enable debug mode while deploying and testing. Change it to an empty string to disable debug mode later.
+-
+  - You may also choose to enable debug mode while deploying and testing. Change it to an empty string to disable debug mode later.
 ```
 $ heroku config:set DJANGO_DEBUG=True
 ```
