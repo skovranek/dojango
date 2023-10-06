@@ -32,25 +32,24 @@ DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/w
 
 ## Features
 DoJango's features and how to use them are explained on its landing page:
-[DoJango](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
+[DoJango Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
-- Add, Edit and Delete Models: Categories/Projects, Tasks, SubTasks, Counters.
-- "Today's Tasks": See daily todo list organized by priority and earliest due date.
-- "Projects": See tasks associated with an ongoing project.
-- "Deadlines": See tasks listed by due date.
-- Filter: Find tasks by start date, due date, finished, unfinished, etc. 
-- Users are distinguished by browser session id. 
+- [x] Add, Edit and Delete Models: Categories/Projects, Tasks, SubTasks, Counters.
+- [x] "Today's Tasks": See daily todo list organized by priority and earliest due date.
+- [x] "Projects": See tasks associated with an ongoing project.
+- [x] "Deadlines": See tasks listed by due date.
+- [x] Filter: Find tasks by start date, due date, finished, unfinished, etc. 
+- [x] Users are distinguished by browser session id. 
 > **Note**
 > [Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but I decided that registering an account was an unnecessary burden to ask of potential users of such a straightforward app.)
 
 ## Download/Install
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-
-- You may use the GitHub CLI: [GitHub CLI](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli)
+   - You may use the GitHub CLI: [GitHub CLI](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli)
 ```
 $ gh repo fork skovranek/dojango --clone=true
 ```
-- Or you may use the 'Fork' button above, then clone your forked repo: [Browser](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=webui)
+   - Or you may use the 'Fork' button above, then clone your forked repo: [Browser](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=webui)
 ```
 $ git clone https://github.com/YOUR-USERNAME/dojango
 ```
