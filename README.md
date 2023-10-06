@@ -66,7 +66,7 @@ $ heroku --version
 $ heroku login
 ```
 
-## Implement and Configure
+## Configure and Implement
 
 1) Subscribe to the Ecos Dynos Plan: [Heroku Ecos Dyno Hours](https://devcenter.heroku.com/articles/eco-dyno-hours)
 
@@ -106,12 +106,12 @@ $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
 ```
 
-8) Now you may deploy to Heroku with Git, following the rest of the instructions from the [link](https://devcenter.heroku.com/articles/git) in Step 2.
+9) Now you may deploy to Heroku with Git, following the rest of the instructions from the [link](https://devcenter.heroku.com/articles/git) in Step 2.
 ```
 $ git push heroku main
 ```
 
-9) Check the Heroku log to ensure the app is online and configured correctly.
+10) Check the Heroku log to ensure the app is online and configured correctly.
 ```
 $ heroku logs --tail
 ```
