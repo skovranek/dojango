@@ -7,29 +7,19 @@ View: [DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 
 ## Table of Contents
 
-1) [What](#what)
-2) [Why](#why)
-3) [How](#how)
-4) [Features](#features)
-5) [Download/Install](#downloadinstall)
-6) [Configure and Implement](#configure-and-implement)
-7) [Customization](#customization)
-8) [Dependencies](#dependencies)
-9) [Testing](#testing)
-10) [Contact](#contact)
-11) [Contribute](#contribute)
-12) [License](#license)
+1) [Overview](#overview)
+2) [Download/Install](#downloadinstall)
+3) [Configure and Implement](#configure-and-implement)
+4) [Customization](#customization)
+5) [Dependencies](#dependencies)
+6) [Contact](#contact)
+7) [Contribute](#contribute)
+8) [License](#license)
 
-## What
-DoJango is yet another todo list web app.
+## Overview
+DoJango is yet another todo list web app. More specifically, DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database. I challenged myself to build a simple web app using Python. This project demonstrates knowledge of Python, Django and backend development.
 
-## Why
-I challenged myself to build a simple web app using Python. DoJango demonstrates knowledge of Python, Django and backend development.
-
-## How
-DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database.
-
-## Features
+### Features
 DoJango's features and how to use them are explained on its landing page:
 [DoJango Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
@@ -141,9 +131,6 @@ whitenoise[brotli]>=6.0,<7.0
 psycopg; sys_platform == "linux"
 psycopg[binary]; sys_platform != "linux"
 ```
-
-## Testing
-The website is manually tested to ensure the UI and backend function as expected.
 
 ## Contact
 Questions, issues or suggestions: mattjskov at gmail.com
