@@ -24,14 +24,14 @@ DoJango is yet another todo list web app. More specifically, DoJango is a [Pytho
 DoJango's features and how to use them are explained on its landing page:
 [DoJango Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
-- [x] Add, Edit and Delete Models: Categories/Projects, Tasks, SubTasks, Counters.
-- [x] "Today's Tasks": See todos listed by priority and due date.
-- [x] "Projects": See tasks per project.
-- [x] "Deadlines": See tasks listed by due date.
-- [x] "Previous # Days": See days with tasks.
-- [x] "Library": Find all models.
-- [x] "Archive": See todo lists by date.
-- [x] Users are distinguished by browser session id. 
+- Add, Edit and Delete Models: Categories/Projects, Tasks, SubTasks, Counters.
+- "Today's Tasks": See todos listed by priority and due date.
+- "Projects": See tasks per project.
+- "Deadlines": See tasks listed by due date.
+- "Previous # Days": See days with tasks.
+- "Library": Find all categories, projects, tasks or unfinished tasks.
+- "Archive": See todo lists by date.
+- Users are distinguished by browser session id. 
 > **Note**
 > [Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but I decided that registering an account was an unnecessary burden to ask of potential users of such a straightforward app.
 
