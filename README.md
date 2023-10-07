@@ -8,18 +8,19 @@ View: [DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 ## Table of Contents
 
 1) [Overview](#overview)
-2) [Download/Install](#downloadinstall)
-3) [Configure and Implement](#configure-and-implement)
-4) [Customization](#customization)
-5) [Dependencies](#dependencies)
-6) [Contact](#contact)
-7) [Contribute](#contribute)
-8) [License](#license)
+2) [Features](#Features)
+3) [Download/Install](#downloadinstall)
+4) [Configure and Implement](#configure-and-implement)
+5) [Customization](#customization)
+6) [Dependencies](#dependencies)
+7) [Contact](#contact)
+8) [Contribute](#contribute)
+9) [License](#license)
 
 ## Overview
 DoJango is yet another todo list web app. More specifically, DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database. I challenged myself to build a simple web app using Python. This project demonstrates knowledge of Python, Django and backend development.
 
-### Features
+## Features
 DoJango's features and how to use them are explained on its landing page:
 [DoJango Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
