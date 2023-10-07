@@ -8,7 +8,7 @@ nav,
 p,
 td,
 th {
-  color: #4CBB17;
+  color: #228B22;
   font-family: "Courier New", Courier, monospace;
   font-weight: normal;
   text-decoration: none;
@@ -27,7 +27,7 @@ h3 {
 
 a:hover {
   background-color: lime;
-  color: #28282B;}
+  color: #1c1b22;}
 
 .archive {
   margin: auto;
@@ -36,17 +36,17 @@ a:hover {
 }
 
 .black {
-  color: #28282B;
+  color: #1c1b22;
   display: inline;
 }
 
 body {
-  background: #28282B;
+  background: #1c1b22;
   padding: 0 10px 0 10px;
 }
 
 .button {
-  background-color: #28282B;
+  background-color: #1c1b22;
   border: 3px solid white;
   color: white;
   cursor: pointer;
@@ -69,7 +69,7 @@ body {
 
 .delete:hover {
   background-color: lime;
-  color: #28282B;
+  color: #1c1b22;
 }
 
 .form{
@@ -82,7 +82,7 @@ body {
 
 input,
 select {
-  background-color: #28282B;
+  background-color: #1c1b22;
   color: white;
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
