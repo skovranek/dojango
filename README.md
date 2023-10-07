@@ -1,7 +1,7 @@
 # DoJango
 Do + Django = DoJango
 
-View: [DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
+[View DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
@@ -9,8 +9,8 @@ View: [DoJango on Heroku](https://dojango-2bea5c2d6d6c.herokuapp.com/)
 
 1) [Overview](#overview)
 2) [Features](#Features)
-3) [Download/Install](#downloadinstall)
-4) [Configure and Implement](#configure-and-implement)
+3) [Download/Install](#downloadinstall-with-heroku)
+4) [Configure and Implement](#configure-and-implement-with-heroku)
 5) [Customization](#customization)
 6) [Dependencies](#dependencies)
 7) [Contact](#contact)
@@ -25,15 +25,17 @@ DoJango's features and how to use them are explained on its landing page:
 [DoJango Introduction](https://dojango-2bea5c2d6d6c.herokuapp.com/introduction)
 
 - [x] Add, Edit and Delete Models: Categories/Projects, Tasks, SubTasks, Counters.
-- [x] "Today's Tasks": See daily todo list organized by priority and earliest due date.
-- [x] "Projects": See tasks associated with an ongoing project.
+- [x] "Today's Tasks": See todos listed by priority and due date.
+- [x] "Projects": See tasks per project.
 - [x] "Deadlines": See tasks listed by due date.
-- [x] Filter: Find tasks by start date, due date, finished, unfinished, etc. 
+- [x] "Previous # Days": See days with tasks.
+- [x] "Library": Find all models.
+- [x] "Archive": See todo lists by date.
 - [x] Users are distinguished by browser session id. 
 > **Note**
 > [Previously](https://github.com/skovranek/dojango/tree/b913092123b2c516eed3b887133bdc9e9670132c), I implemented user accounts but I decided that registering an account was an unnecessary burden to ask of potential users of such a straightforward app.
 
-## Download/Install
+## Download/Install with Heroku
 1) Fork this repo, then clone your forked repo on your local machine: [GitHub Fork A Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 
 - You may use the GitHub CLI: [GitHub CLI](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli)
@@ -57,7 +59,7 @@ $ heroku --version
 $ heroku login
 ```
 
-## Configure and Implement
+## Configure and Implement with Heroku
 
 1) Subscribe to the Ecos Dynos Plan: [Heroku Ecos Dyno Hours](https://devcenter.heroku.com/articles/eco-dyno-hours)
 
