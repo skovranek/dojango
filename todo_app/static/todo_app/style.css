@@ -8,7 +8,7 @@ nav,
 p,
 td,
 th {
-  color: #228B22;
+  color: #4CBB17;
   font-family: "Courier New", Courier, monospace;
   font-weight: normal;
   text-decoration: none;
@@ -26,7 +26,7 @@ h3 {
 }
 
 a:hover {
-  background-color: lime;
+  background-color: #4CBB17;
   color: #1c1b22;}
 
 .archive {
@@ -63,12 +63,12 @@ body {
 .delete {
   background-color: inherit;
   border: none;
-  color: lime;
+  color: #4CBB17;
   cursor: pointer;
 }
 
 .delete:hover {
-  background-color: lime;
+  background-color: #4CBB17;
   color: #1c1b22;
 }
 
