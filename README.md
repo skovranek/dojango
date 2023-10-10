@@ -119,9 +119,9 @@ If you run into any issues, you may check these articles for additional guidance
 [Medium Article - Deploying Django App to Heroku: Full Guide](https://medium.com/quick-code/deploying-django-app-to-heroku-full-guide-6ff7252578d7)
 
 ## Run on Localhost
-Django provides a developmental server you may run on localhost.
+Django provides a developmental server you may run on localhost, which is free, unlike Heroku.
 
-1) Change the configuration by making these changes in the 'main/settings.py' file:
+1) Change the configuration by making these changes in the 'main/settings.py' file: [Django Settings](https://docs.djangoproject.com/en/4.2/ref/settings/#databases)
 ```python
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
@@ -143,12 +143,12 @@ DATABASES = {
 }
 ```
 
-2) Create a virtual environment:
+2) Create a virtual environment: [Python.org Virtual Environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)
 ```
 $ python3 -m venv env
 ```
 
-3) Activate virtual environment:
+3) Activate virtual environment: [Python.org Activate](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment)
 ```
 $ source env/bin/activate
 ```
@@ -158,30 +158,30 @@ $ source env/bin/activate
 > $ deactivate
 > ```
 
-4) Install dependencies:
+4) Install dependencies: [Python.org 'requirements.txt'](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment)
 ```
 $ python3 -m pip install -r requirements.txt
 ```
 
-5) Prepare the database:
+5) Prepare the database: [Django Workflow](https://docs.djangoproject.com/en/4.2/topics/migrations/#workflow)
 ```
 $ python3 manage.py makemigrations
 $ python3 manage.py migrate
 ```
 
-6) Create a 'superuser' admin account:
+6) Create a 'superuser' admin account: [Django Admin User](https://docs.djangoproject.com/en/1.8/intro/tutorial02/#creating-an-admin-user)
 ```
 $ python3 manage.py createsuperuser
 ```
 
 7) Ensure your browser's security settings permit 'http' traffic. Modern browsers automatically redirect requests through 'https' instead of 'http'. This can be a headache for developers who just want to test a local server. Be sure to change your browser's security settings back to your preferences when you are done. 
 
-8) Start the server:
+8) Start the server: [Django 'runserver'](https://docs.djangoproject.com/en/4.2/ref/django-admin/#runserver)
 ```
 $ python3 manage.py runserver
 ```
 
-9) Use your browser to check your server by navigating to the default localhost address, 'http://127.0.0.1:8000'.
+9) Use your browser to check your server by navigating to the default localhost address, 'http://127.0.0.1:8000'. This is not a production server and should only be used for development and testing.
 
 ## Customization
 You may customize DoJango's design by modifying the CSS style in the `todo_app/static/style.css` file.
