@@ -9,13 +9,14 @@ Do + Django = DoJango
 
 1) [Overview](#overview)
 2) [Features](#Features)
-3) [Download/Install](#downloadinstall-with-heroku)
-4) [Configure and Implement](#configure-and-implement-with-heroku)
-5) [Customization](#customization)
-6) [Dependencies](#dependencies)
-7) [Contact](#contact)
-8) [Contribute](#contribute)
-9) [License](#license)
+3) [Download/Install With Heroku](#downloadinstall-with-heroku)
+4) [Configure and Implement With Heroku](#configure-and-implement-with-heroku)
+5) [Run on Localhost](#run-on-localhost)
+6) [Customization](#customization)
+7) [Dependencies](#dependencies)
+8) [Contact](#contact)
+9) [Contribute](#contribute)
+10) [License](#license)
 
 ## Overview
 DoJango is yet another todo list web app. More specifically, DoJango is a [Python](https://www.python.org/) [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) [web app](https://en.wikipedia.org/wiki/Web_application) built with the [Django](https://www.djangoproject.com/) framework, hosted on [Heroku](https://www.heroku.com/home) with a [PostgreSQL](https://www.postgresql.org/) database. I challenged myself to build a simple web app using Python. This project demonstrates knowledge of Python, Django and backend development.
@@ -116,6 +117,71 @@ If you run into any issues, you may check these articles for additional guidance
 [Deploying Django on Heroku](https://devcenter.heroku.com/articles/deploying-python)
 
 [Medium Article - Deploying Django App to Heroku: Full Guide](https://medium.com/quick-code/deploying-django-app-to-heroku-full-guide-6ff7252578d7)
+
+## Run on Localhost
+Django provides a developmental server you may run on localhost.
+
+1) Change the configuration by making these changes in the 'main/settings.py' file:
+```python
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+
+# do not push or deploy this secret key to production.
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'q!m3b=%0d1v9m_m+2ygv-o*+3@w0a3vutzuy(ol*$()na10am)')
+
+ALLOWED_HOSTS = ['127.0.0.1']
+
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+SECURE_PROXY_SSL_HEADER = None
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "dojango_database",
+    }
+}
+```
+
+2) Create a virtual environment:
+```
+$ python3 -m venv env
+```
+
+3) Activate virtual environment:
+```
+$ source env/bin/activate
+```
+**Note**
+> When you want to turn off the virtual environment later:
+> ```
+> $ deactivate
+> ```
+
+4) Install dependencies:
+```
+$ python3 -m pip install -r requirements.txt
+```
+
+5) Prepare the database:
+```
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+```
+
+6) Create a 'superuser' admin account:
+```
+$ python3 manage.py createsuperuser
+```
+
+7) Ensure your browser's security settings permit 'http' traffic. Modern browsers automatically redirect requests through 'https' instead of 'http'. This can be a headache for developers who just want to test a local server. Be sure to change your browser's security settings back to your preferences when you are done. 
+
+8) Start the server:
+```
+$ python3 manage.py runserver
+```
+
+9) Use your browser to check your server by navigating to the default localhost address, 'http://127.0.0.1:8000'.
 
 ## Customization
 You may customize DoJango's design by modifying the CSS style in the `todo_app/static/style.css` file.

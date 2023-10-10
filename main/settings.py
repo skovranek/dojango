@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # dict value set as '' to evaluate as False by bool()
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
+DEBUG = bool(os.environ.get('DJANGO_DEBUG'))
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # remove all but heroku
-ALLOWED_HOSTS = ['dojango-2bea5c2d6d6c.herokuapp.com']
+ALLOWED_HOSTS = ['dojango-2bea5c2d6d6c.herokuapp.com', '127.0.0.1']
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
